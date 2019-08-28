@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
+
+:root {
+    --primary-text-color: #505050;
+    --second-color: #ffc400;
+    --second-color-black: #ff9035;
+    --primary-color: #0a95cc;
+    --second-text-color: #004898;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    color: var(--primary-text-color);
+    font-family: "montserrat";
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, p{
+    margin: 0;
+}
+
+.btn {
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    font-family: "montserrat";
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 3;
+
+    width: 100%;
+    height: 3.8em;
+
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute; /*relative to the .navbar box*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80vw;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: 500;
+    
+
+    margin: auto 1em;
+}
+
+.sign-up-btn {
+    font-size: 1em;
+    padding: .5em 1em;
+    margin-left: .8em;
+    color: white;
+    background-image: linear-gradient(var(--second-text-color), var(--primary-color));
+}
+
+.sign-up-btn:hover{
+    box-shadow: 0px 0px 11px var(--second-text-color);
+    transform: translateY(-5%);
+}
+
+nav > .links > ul {
+    display: flex;
+    text-transform: uppercase;
+}
+
+nav > .links > ul > li{
+    margin: 0 1em;
+    padding: .5em 1em; 
+    
+    border-bottom: solid 3px transparent;
+    font-size: .9em;
+    transition: border-bottom .4s ease-in;
+}
+
+nav > .links > ul > li:hover {
+    border-bottom: solid 3px var(--second-color);
+}
+
+.logo {
+    font-family: "PT Sans Narrow";
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    font-size: 1.7em;
+    display: flex;
+}
+
+.logo > img {
+    width: 1.3em;
+    margin-right: 0.3em;
+}
+
+.logo > a {
+    color: var(--logo-color);
+    letter-spacing: 0.03em;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header > section::after {
+    content: "";
+
+    position: absolute;
+
+    background-image: url(img/background-out.webp);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+header > section {
+    position: relative;
+
+    background-image: url(img/background.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.headline {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    white-space: nowrap; /*to prevent line break*/
+    font-family: "Pathway Gothic One";
+    text-transform: uppercase;
+    font-size: 8em;
+    color: white;
+    text-shadow: 0.05em 0.05em var(--second-text-color);
+    letter-spacing: 0.03em;
+    word-spacing: 0.09em;
+}
+
+.intro {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+section > .container > .hero-btn {
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    padding: 1em 3.3em;
+    
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+    background-image: linear-gradient(var(--second-color-black), var(--second-color));
+}
+
+section > .container > .hero-btn:hover {
+    box-shadow: 0px 0px 11px var(--second-color);
+    transform: translate(-50%, -55%);
+}
+
+.menu {
+    display: none;
+}
+
+
+/*main{
+    display: grid;
+}*/
+
+
+
+
+
