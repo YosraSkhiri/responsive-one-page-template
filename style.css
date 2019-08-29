@@ -141,7 +141,7 @@ nav > .links > ul > li > a:hover {
 
 .menu {
     display: none;
-
+    margin: auto 0;
     cursor: pointer;
 }
 
@@ -204,12 +204,14 @@ header > section {
     white-space: nowrap; /*to prevent line break*/
     font-family: "Pathway Gothic One";
     text-transform: uppercase;
-    font-size: 8em;
+    text-align: center;
+    font-size: 11vw; 
     color: white;
     text-shadow: 0.05em 0.05em var(--second-text-color);
     letter-spacing: 0.03em;
     word-spacing: 0.09em;
 }
+
 
 .intro {
     position: absolute; /* relative to the section*/
@@ -217,6 +219,8 @@ header > section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+
+    text-align: center;
 
     font-size: 1.1em;
     color: rgba(255, 255, 255, 0.8);
@@ -248,6 +252,52 @@ section > .container > .hero-btn:hover {
 /*main{
     display: grid;
 }*/
+
+
+@media  only screen and (max-width: 950px){
+
+    body {
+        font-size: 14px;
+    }
+
+    .links {
+        display: none;
+    }
+ 
+    .menu {
+        display: block;
+    }
+}
+
+@media  only screen and (max-width: 640px){
+    .headline{
+        white-space: normal;
+        font-size: 15vw;
+        top: 41%;
+    }
+     
+.headline > span {
+    white-space: nowrap;
+}
+}
+
+@media  only screen and (max-width: 525px){
+ .intro{
+    top: 68%;
+     font-size: 1em;
+    }
+ .headline{
+     white-space: normal;
+     font-size: 20vw;
+     top: 43%;
+ }
+
+
+
+ section > .container > .hero-btn{
+    top: 82%;
+ }
+}
 
 
 
