@@ -73,10 +73,6 @@ nav, nav > div {
     justify-content: space-between;
 }
 
-.logo > img {
-    width: 2.2em;
-    margin-right: 0.3em;
-}
 
 .logo > a {
     font-family: "PT Sans Narrow";
@@ -92,7 +88,7 @@ nav, nav > div {
         but margin: auto; did.
     
     */
-    margin: auto;
+    margin: 0 auto 0 .3em;
 }
 
 
