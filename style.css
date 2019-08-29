@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
 
 :root {
-    --primary-text-color: #505050;
+    --primary-text-color: #3d3d3d;
     --second-color: #ffc400;
     --second-color-black: #ff9035;
     --primary-color: #0a95cc;
@@ -46,19 +46,20 @@ h1, h2, p{
     margin: 0 auto;
 }
 
+/* Navigation bar */
+
 .navbar {
     position: fixed;
     z-index: 3;
 
     width: 100%;
-    height: 3.8em;
-
+    height: 62px;
+    
     background-color: white;
+    box-shadow: 0px 10px 20px rgba(80, 80, 80, .3);
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
     position: absolute; /*relative to the .navbar box*/
     top: 50%;
     left: 50%;
@@ -67,64 +68,95 @@ nav {
     width: 80vw;
 }
 
-.links {
+nav, nav > div {
     display: flex;
     justify-content: space-between;
-
-    font-weight: 500;
-    
-
-    margin: auto 1em;
 }
 
+.logo > img {
+    width: 2.2em;
+    margin-right: 0.3em;
+}
+
+.logo > a {
+    font-family: "PT Sans Narrow";
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    font-size: 1.7em;
+    letter-spacing: 0.03em;
+    /* 
+
+        comment-1:
+        when I added the padding to the ul in the navbar 
+        the text logo shifted to the top, text-align: center; didn't fix it 
+        but margin: auto; did.
+    
+    */
+    margin: auto;
+}
+
+
 .sign-up-btn {
-    font-size: 1em;
-    padding: .5em 1em;
-    margin-left: .8em;
+    padding: .6em 1.5em;
+    margin: auto 0 auto .9em; /* same behaviour as the text of the logo (see comment-1) */
+
+    font-size: .9em;
     color: white;
     background-image: linear-gradient(var(--second-text-color), var(--primary-color));
 }
 
 .sign-up-btn:hover{
-    box-shadow: 0px 0px 11px var(--second-text-color);
+    box-shadow: 0px 0px 7px var(--second-text-color);
     transform: translateY(-5%);
 }
 
 nav > .links > ul {
     display: flex;
+
+    margin: auto;
+
     text-transform: uppercase;
 }
 
-nav > .links > ul > li{
+/*
+
+    changed this from "nav > .links > ul > li" to "nav > .links > ul > li > a"
+    it made the clickable space of the a tag bigger due to the padding, 
+    it's more convenient for the user.
+
+*/
+
+nav > .links > ul > li > a{
     margin: 0 1em;
-    padding: .5em 1em; 
-    
-    border-bottom: solid 3px transparent;
-    font-size: .9em;
-    transition: border-bottom .4s ease-in;
+    padding: 1.3em 1em; 
+    border-bottom: solid 6px transparent;
+    font-size: .8em;
+    transition: .2s ease-in;
 }
 
-nav > .links > ul > li:hover {
-    border-bottom: solid 3px var(--second-color);
+nav > .links > ul > li > a:hover {
+    color: var(--second-color);
+    border-bottom: solid 6px var(--second-color);
 }
 
-.logo {
-    font-family: "PT Sans Narrow";
-    color: var(--primary-text-color);
-    text-transform: uppercase;
-    font-size: 1.7em;
-    display: flex;
+.menu {
+    display: none;
+
+    cursor: pointer;
 }
 
-.logo > img {
-    width: 1.3em;
-    margin-right: 0.3em;
+.line{
+    width: 35px;
+    border-top: 4px solid var(--primary-text-color);   
 }
 
-.logo > a {
-    color: var(--logo-color);
-    letter-spacing: 0.03em;
+.line:nth-child(1), .line:nth-child(2) {
+    margin-bottom: 5px;
 }
+
+/* /Navigation bar */
+
+/* hero section*/
 
 header {
     width: 100%;
@@ -136,30 +168,36 @@ header > section::after {
     content: "";
 
     position: absolute;
-
-    background-image: url(img/background-out.webp);
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
+    top: 0;
+    left: 0;
+    
     width: 100%;
     height: 100%;
+
+    background-image: url(img/background-out.webp);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
 }
 
 header > section {
     position: relative;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
 
     background-image: url(img/background.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    width: 100%;
-    height: 100%;
 }
 
 .headline {
-    position: absolute;
-    top: 48%;
+    position: absolute; /* relative to the section*/
+    top: 49%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -174,7 +212,7 @@ header > section {
 }
 
 .intro {
-    position: absolute;
+    position: absolute; /* relative to the section*/
     top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -185,7 +223,7 @@ header > section {
 }
 
 section > .container > .hero-btn {
-    position: absolute;
+    position: absolute; /* relative to the section*/
     top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -204,9 +242,7 @@ section > .container > .hero-btn:hover {
     transform: translate(-50%, -55%);
 }
 
-.menu {
-    display: none;
-}
+/* /hero section*/
 
 
 /*main{
