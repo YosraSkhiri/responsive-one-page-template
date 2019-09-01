@@ -50,13 +50,13 @@ h1, h2, p{
 
 .navbar {
     position: fixed;
-    z-index: 3;
+    z-index: 5;
 
     width: 100%;
     height: 62px;
     
     background-color: white;
-    box-shadow: 0px 10px 20px rgba(80, 80, 80, .3);
+    box-shadow: 0px 10px 20px rgba(10, 149, 204, .3);
 }
 
 nav {
@@ -83,7 +83,7 @@ nav, nav > div {
     /* 
 
         comment-1:
-        when I added the padding to the ul in the navbar 
+        when I added the padding to the a in the navbar 
         the text logo shifted to the top, text-align: center; didn't fix it 
         but margin: auto; did.
     
@@ -123,8 +123,7 @@ nav > .links > ul {
 */
 
 nav > .links > ul > li > a{
-    margin: 0 1em;
-    padding: 1.3em 1em; 
+    padding: 1.3em 2em; 
     border-bottom: solid 6px transparent;
     font-size: .8em;
     transition: .2s ease-in;
@@ -160,26 +159,7 @@ header {
     overflow: hidden;
 }
 
-header > section::after {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    width: 100%;
-    height: 100%;
-
-    background-image: url(img/background-out.webp);
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-}
-
 header > section {
-    position: relative;
-    top: 0;
-    left: 0;
 
     width: 100%;
     height: 100%;
@@ -191,12 +171,21 @@ header > section {
     background-size: cover;
 }
 
-.headline {
-    position: absolute; /* relative to the section*/
-    top: 49%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+header > section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 149, 204, .1);
+    box-shadow: inset 120px 100px 250px rgba(10, 149, 204, .7);
+}
+
+.headline {
+    margin-bottom: .2em;
     white-space: nowrap; /*to prevent line break*/
     font-family: "Pathway Gothic One";
     text-transform: uppercase;
@@ -208,38 +197,42 @@ header > section {
     word-spacing: 0.09em;
 }
 
+/*
 
-.intro {
-    position: absolute; /* relative to the section*/
-    top: 63%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    grouped the .intro & the .hero-btn in a .under-headline div
+    so that it could positioned easely.
 
+*/
+.hero-content {
+    position: relative;
+    z-index: 3;
+    margin: auto;
+    padding-top: 12em; 
     text-align: center;
-
-    font-size: 1.1em;
-    color: rgba(255, 255, 255, 0.8);
 }
 
-section > .container > .hero-btn {
-    position: absolute; /* relative to the section*/
-    top: 77%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+.intro {
+    margin-bottom: 1.6em;
+    text-align: center;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, .9);
+}
 
+.hero-btn {
     padding: 1em 3.3em;
-    
+    display: block; /* this is an a tag, I had to make it a block element to set the width, if I take this down it will take the whole width of the div*/
+    margin: auto;
+    width: 6.6em;
     font-size: 1em;
     font-weight: 600;
+    text-align: center;
     color: white;
     background-image: linear-gradient(var(--second-color-black), var(--second-color));
 }
 
-section > .container > .hero-btn:hover {
+.hero-btn:hover {
     box-shadow: 0px 0px 11px var(--second-color);
-    transform: translate(-50%, -55%);
+    transform: translateY(-5%);
 }
 
 /* /hero section*/
@@ -249,13 +242,20 @@ section > .container > .hero-btn:hover {
     display: grid;
 }*/
 
-
-@media  only screen and (max-width: 950px){
-
-    body {
-        font-size: 14px;
+@media  only screen and (max-width: 800px){
+    .headline{
+        white-space: normal;
+        font-size: 4.5em;
+        top: 3.4em;
     }
+     
+    .headline > span {
+        white-space: nowrap;
+    }
+}
 
+
+@media  only screen and (max-width: 760px){
     .links {
         display: none;
     }
@@ -264,37 +264,6 @@ section > .container > .hero-btn:hover {
         display: block;
     }
 }
-
-@media  only screen and (max-width: 640px){
-    .headline{
-        white-space: normal;
-        font-size: 15vw;
-        top: 41%;
-    }
-     
-.headline > span {
-    white-space: nowrap;
-}
-}
-
-@media  only screen and (max-width: 525px){
- .intro{
-    top: 68%;
-     font-size: 1em;
-    }
- .headline{
-     white-space: normal;
-     font-size: 20vw;
-     top: 43%;
- }
-
-
-
- section > .container > .hero-btn{
-    top: 82%;
- }
-}
-
 
 
 
