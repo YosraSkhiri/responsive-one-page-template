@@ -195,6 +195,7 @@ header > section::before{
     text-shadow: 0.05em 0.05em var(--second-text-color);
     letter-spacing: 0.03em;
     word-spacing: 0.09em;
+
 }
 
 /*
@@ -204,10 +205,11 @@ header > section::before{
 
 */
 .hero-content {
-    position: relative;
+    position: absolute;
     z-index: 3;
-    margin: auto;
-    padding-top: 12em; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
