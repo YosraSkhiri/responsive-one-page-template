@@ -1,6 +1,7 @@
 hamburger = document.querySelector('.menu');
-navbar = document.querySelector('.links');
+navbar = document.querySelector('.links > ul');
 
 hamburger.addEventListener("click", function(){
-    navbar.addclass();
+    //navbar.classList.add('mob-nav');
+
 });
