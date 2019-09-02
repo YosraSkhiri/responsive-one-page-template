@@ -314,6 +314,39 @@ h2 {
     margin-bottom: .5em;
 }
 
+/* /main section */
+
+/* footer */
+
+footer{
+    background-color: var(--second-text-color);
+    
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 3em 0;
+}
+
+footer a, footer .logo a {
+    color: white;
+}
+
+.footer-list li {
+    margin-bottom: .5em; 
+}
+
+.footer-list, footer .logo {
+    margin-right: .8em; 
+}
+
+.footer-list a:hover {
+    text-decoration: underline;
+}
+
+
+
 @media  only screen and (max-width: 800px){
     .headline{
         white-space: normal;
