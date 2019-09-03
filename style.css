@@ -60,17 +60,14 @@ h1, h2, p{
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
     position: absolute; /*relative to the .navbar box*/
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    
     width: 80vw;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
 }
 
 .logo{
@@ -143,21 +140,6 @@ nav {
     border-bottom: solid 6px var(--second-color);
 }
 
-.menu {
-    display: none;
-    margin: auto 0;
-    cursor: pointer;
-}
-
-.line{
-    width: 35px;
-    border-top: 4px solid var(--primary-text-color);   
-}
-
-.line:nth-child(1), .line:nth-child(2) {
-    margin-bottom: 5px;
-}
-
 /* /Navigation bar */
 
 /* hero section*/
@@ -219,7 +201,6 @@ header > section::before{
     text-shadow: 0.05em 0.05em var(--second-text-color);
     letter-spacing: 0.03em;
     word-spacing: 0.09em;
-
 }
 
 .intro {
@@ -252,7 +233,6 @@ header > section::before{
 /* section2 */
 
 .content {
-
     position: relative;
     background-image: url(img/bg2.webp);
     background-position: center center;
@@ -311,8 +291,6 @@ main > img {
     grid-area: img3;
 }
 
-
-
 main > div {
     justify-self: center;
     align-self: center;
@@ -330,7 +308,6 @@ h2 {
 
 footer{
     background-color: var(--second-text-color);
-    
 }
 
 .footer{
@@ -356,36 +333,24 @@ footer a, footer .logo a {
     text-decoration: underline;
 }
 
+/* /footer */
 
+/* mobile menu style */
 
-@media  only screen and (max-width: 800px){
-    .headline{
-        white-space: normal;
-        font-size: 4.5em;
-        top: 3.4em;
-    }
-     
-    .headline > span {
-        white-space: nowrap;
-    }
+.menu {
+    display: none;
+    margin: auto 0;
+    cursor: pointer;
 }
 
-
-@media  only screen and (max-width: 760px){
-    .links {
-        display: none;
-    }
- 
-    .menu {
-        display: block;
-    }
-
-    main {
-        grid-template: "text1" "img1" "text2" "img2" "text3" "img3";
-    }
+.line{
+    width: 35px;
+    border-top: 4px solid var(--primary-text-color);   
 }
 
-
+.line:nth-child(1), .line:nth-child(2) {
+    margin-bottom: 5px;
+}
 
 .mob-nav {
     display: flex;
@@ -415,5 +380,31 @@ footer a, footer .logo a {
         transform: translateX(-40%);
     }
 }
+/* /mobile menu style */
 
 
+@media  only screen and (max-width: 800px){
+    .headline{
+        white-space: normal;
+        font-size: 4.5em;
+        top: 3.4em;
+    }
+     
+    .headline > span {
+        white-space: nowrap;
+    }
+}
+
+@media  only screen and (max-width: 760px){
+    .links {
+        display: none;
+    }
+ 
+    .menu {
+        display: block;
+    }
+
+    main {
+        grid-template: "text1" "img1" "text2" "img2" "text3" "img3";
+    }
+}
