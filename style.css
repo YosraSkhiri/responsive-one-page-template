@@ -68,13 +68,17 @@ nav {
     width: 80vw;
 }
 
-nav, nav > div {
+nav {
     display: flex;
     justify-content: space-between;
 }
 
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
 
-.logo > a {
+.logo  a {
     font-family: "PT Sans Narrow";
     color: var(--primary-text-color);
     text-transform: uppercase;
@@ -106,7 +110,12 @@ nav, nav > div {
     transform: translateY(-5%);
 }
 
-nav > .links > ul {
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.links > ul {
     display: flex;
 
     margin: auto;
@@ -376,6 +385,33 @@ footer a, footer .logo a {
 
 
 
+.mob-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
+    position: absolute;
+    left: 12.5%;
+    top: 0;
+
+    background-color: white;
+    width: 50vw;
+    height: 100vh;
+    animation: slide .7s ease-in forwards;
+}
+
+.mob-nav li, .mob-nav > a {
+    padding: 1.3em;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(-40%);
+    }
+}
 
 
