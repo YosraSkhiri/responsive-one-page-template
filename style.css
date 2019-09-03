@@ -349,6 +349,7 @@ footer a, footer .logo a {
 
 .footer-list, footer .logo {
     margin-right: .8em; 
+    margin: auto;
 }
 
 .footer-list a:hover {
